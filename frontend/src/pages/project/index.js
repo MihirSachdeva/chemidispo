@@ -9,6 +9,7 @@ import { links } from "../../constants/frontend-urls";
 import { connect } from "react-redux";
 import { fetchProjectIssues } from "../../store/actions/project-issues";
 import { fetchProject } from "../../store/actions/project";
+import Progress from "../../components/common/progress";
 
 const Project = (props) => {
   const { id } = useParams();
@@ -76,7 +77,7 @@ const Project = (props) => {
       </div>
     </div>
   ) : (
-    <CircularProgress />
+    <Progress />
   );
 };
 

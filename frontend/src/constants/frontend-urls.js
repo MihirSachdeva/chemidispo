@@ -1,19 +1,14 @@
 export const pages = Object.freeze({
-  DASHBOARD: "/",
-  USERS: "/users",
-  USER: "/users/:id",
-  PROJECT: "/projects/:id",
-  ISSUE: "/projects/:id/issues/:issueId",
-  SIGNIN: "/signin",
-  ONLOGIN: "/onlogin",
+  HANDLING: "/",
+  DISPOSAL: "/disposal",
 });
 
 export const links = Object.freeze({
-  DASHBOARD: () => `/`,
-  USERS: () => `/users`,
-  USER: (id) => `/users/${id}`,
-  PROJECT: (id) => `/projects/${id}`,
-  ISSUE: (projectId, issueId) => `/projects/${projectId}/issues/${issueId}`,
-  SIGNIN: () => `/signin`,
-  ONLOGIN: () => `/onlogin`,
+  HANDLING: () => `/`,
+  DISPOSAL: () => `/disposal`,
+});
+
+export const page_names = Object.freeze({
+  HANDLING: 'HANDLING',
+  DISPOSAL: 'DISPOSAL',
 });

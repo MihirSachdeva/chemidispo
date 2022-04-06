@@ -1,0 +1,23 @@
+.handling-page {
+    padding: 1rem;
+    width: 100vw;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-scrollable {
+    height: calc(100vh - 64px - 64px - 15px) !important;
+    overflow: auto;
+}
+
+.msds-container {
+    padding: 1rem;
+}
+
+.msds-placards {
+
+}

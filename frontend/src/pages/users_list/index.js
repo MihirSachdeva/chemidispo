@@ -5,6 +5,7 @@ import { Divider, ListItem, Avatar, CircularProgress } from "@mui/material";
 import "./styles.css";
 import { fetchUsers } from "../../store/actions/users";
 import { connect } from "react-redux";
+import Progress from "../../components/common/progress";
 
 const UsersList = (props) => {
   useEffect(() => {
@@ -17,7 +18,7 @@ const UsersList = (props) => {
       <Divider />
       {props.isLoading ? (
         <>
-        <CircularProgress />
+        <Progress />
         </>
       ) : props.error ? (
         <></>

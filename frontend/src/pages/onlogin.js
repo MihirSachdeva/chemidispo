@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
-import { CircularProgress } from "@mui/material";
 import { USER_ON_LOGIN } from "../constants/backend-urls";
+import Progress from "../components/common/progress";
 
 const OnLogin = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -35,7 +35,7 @@ const OnLogin = () => {
 
   return (
     <div>
-      <CircularProgress />
+      <Progress />
     </div>
   );
 };

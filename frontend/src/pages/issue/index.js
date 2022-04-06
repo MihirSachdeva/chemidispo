@@ -12,7 +12,6 @@ import {
   ListItemIcon,
   ListItemText,
   Avatar,
-  CircularProgress,
 } from "@mui/material";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
@@ -27,6 +26,7 @@ import { issueData } from "../../mocks/";
 import { ISSUE, COMMENT, COMMENTS } from "../../constants/backend-urls";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import Progress from "../../components/common/progress";
 
 const Issue = () => {
   const { issueId } = useParams();
@@ -179,7 +179,7 @@ const Issue = () => {
       </Button>
     </div>
   ) : (
-    <CircularProgress />
+    <Progress />
   );
 };
 

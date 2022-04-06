@@ -1,17 +1,15 @@
 import * as React from "react";
-import { Box, CssBaseline, Grid, Toolbar, Typography } from "@mui/material";
-import ProjectList from "../components/project-list";
-import IssueList from "../components/issue-list";
+import { Grid } from "@mui/material";
 import Routes from '../routes/protected-routes'
+import BottomNav from "../components/bottom-nav";
 
 import "./styles.css";
 
 const Layout = () => {
   return (
     <Grid sx={{ display: "flex" }} className="content-grid">
-      <ProjectList />
-      <IssueList />
       <Routes />
+      <BottomNav />
     </Grid>
   );
 };
