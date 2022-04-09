@@ -14,6 +14,10 @@ router.register(r'issue_status', IssueStatusViewSet, basename='issue_status')
 router.register(r'user_projects', UserProjectsViewSet, basename='user_projects')
 router.register(r'user_issues_assigned', UserIssuesAssignedViewSet, basename='user_issues_assigned')
 router.register(r'user_issues_reported', UserIssuesReportedViewSet, basename='user_issues_reported')
+router.register(r'category', CategoryViewSet, basename='category')
+router.register(r'chemical', ChemicalViewSet, basename='chemical')
+router.register(r'handling', HandlingViewSet, basename='handling')
+router.register(r'compatibility', CompatibilityViewSet, basename='compatibility')
 urlpatterns = router.urls
 
 urlpatterns += [
