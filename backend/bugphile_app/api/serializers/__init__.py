@@ -7,5 +7,9 @@ from .issue import IssueReadSerializer, IssueSerializer
 from .project_status import ProjectStatusSerializer, ProjectStatusStatsSerializer
 from .project import ProjectSerializer, ProjectReadSerializer
 from .user_things.user_projects import UserProjectsSerializer
-from .user_things.user_issues_reported import UserIssuesReportedSerializer 
-from .user_things.user_issues_assigned import UserIssuesAssignedSerializer 
+from .user_things.user_issues_reported import UserIssuesReportedSerializer
+from .user_things.user_issues_assigned import UserIssuesAssignedSerializer
+from .category import CategorySerializer
+from .chemical import ChemicalSerializer
+from .handling import HandlingSerializer
+from .compatibility import CompatibilitySerializer
