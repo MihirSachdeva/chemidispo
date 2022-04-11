@@ -15,3 +15,7 @@ from .stats.project import ProjectStatsView
 from .stats.leaderboard import UserStatsView
 from .who_am_i import WhoAmIView
 from .project_issues import ProjectIssuesView
+from .category import CategoryViewSet
+from .chemical import ChemicalViewSet
+from .handling import HandlingViewSet
+from .compatibility import CompatibilityViewSet

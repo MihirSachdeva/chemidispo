@@ -7,3 +7,7 @@ from .issue_tag import IssueTag
 from .issue import Issue
 from .issue_event import IssueEvent
 from .comment import Comment
+from .category import Category
+from .compatibility import Compatibility
+from .chemical import Chemical
+from .handling import Handling
