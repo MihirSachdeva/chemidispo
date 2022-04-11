@@ -6,6 +6,11 @@
 
 .disposal-fab {
     position: absolute !important;
-    bottom: 5rem;
-    right: 3rem;
+    bottom: 4.5rem;
+    right: 1rem;
+}
+
+.list-scrollable-disposal {
+    height: calc(100vh - 22rem) !important;
+    overflow: auto;
 }

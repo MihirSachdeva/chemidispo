@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Typography, Divider } from '@mui/material';
 
 import { page_names } from "../../constants/frontend-urls";
 import { setPage } from "../../store/actions/page";
 
-import "./styles.css";
 import List from "./list";
 import ChemicalHandlingModal from "./modal";
+import "./styles.css";
+import emptyListIllustration from "../../assets/img/empty.svg";
+
+const chemicals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+// const chemicals = [];
 
 const Handling = (props) => {
   const [modal, setModal] = useState(false);
@@ -19,13 +23,32 @@ const Handling = (props) => {
   return (
     <>
       <div className="handling-page">
+        <Typography variant="h5">Chemical Handling</Typography>
+
+        <Divider variant="middle" style={{ margin: '0.5rem 0' }} />
+
         <div className="search-container">
           <TextField id="" label="Search chemical" variant="outlined" />
           <Button>Search</Button>
         </div>
-        <List showModal={() => {
-          setModal(true)
-        }} />
+
+        <Divider variant="middle" style={{ margin: '0.5rem 0' }} />
+
+        {chemicals.length ? (
+          <List
+            chemicals={chemicals}
+            showModal={() => {
+              setModal(true)
+            }}
+          />
+        ) : (
+          <div className="empty-list-illustration-container">
+            <img src={emptyListIllustration} className="empty-list-illustration" />
+            <br />
+            <Typography variant="caption">Search for a chemical to get started!</Typography>
+          </div>
+        )}
+
       </div>
       <ChemicalHandlingModal
         open={modal}

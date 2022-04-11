@@ -6,29 +6,16 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import CommentIcon from '@mui/icons-material/Comment';
 
-export default function CheckboxList() {
-  const [checked, setChecked] = React.useState([0]);
-
+export default function CheckboxList(props) {
   const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-
-    setChecked(newChecked);
+    props.handleChemicalSelect(value);
   };
 
   return (
-    <Box sx={{ width: '100%', bgcolor: 'background.paper' }} className="list-scrollable">
+    <Box sx={{ width: '100%', bgcolor: 'background.paper' }} className="list-scrollable-disposal">
       <List>
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((value) => {
+        {props.allChemicals && props.allChemicals.map((value) => {
           const labelId = `checkbox-list-label-${value}`;
 
           return (
@@ -40,13 +27,13 @@ export default function CheckboxList() {
                 <ListItemIcon>
                   <Checkbox
                     edge="start"
-                    checked={checked.indexOf(value) !== -1}
+                    checked={props.checked.indexOf(value) !== -1}
                     tabIndex={-1}
                     disableRipple
                     inputProps={{ 'aria-labelledby': labelId }}
                   />
                 </ListItemIcon>
-                <ListItemText id={labelId} primary={`Chemical ${value + 1}`} />
+                <ListItemText id={labelId} primary={`Chemical ${value}`} />
               </ListItemButton>
             </ListItem>
           );

@@ -25,7 +25,7 @@ export default function ChemicalHandlingModal(props) {
       onClose={handleClose}
       TransitionComponent={Transition}
     >
-      <AppBar sx={{ position: 'relative' }}>
+      <AppBar sx={{ position: 'sticky' }}>
         <Toolbar>
           <IconButton
             edge="start"
