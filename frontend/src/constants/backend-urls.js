@@ -40,3 +40,5 @@ export const PROJECT_STATS = (id) => `${API_ROOT()}project_stats`
 export const ISSUE_TAGS = () => `${API_ROOT()}tags/`
 
 export const WHO_AM_I = () => `${API_ROOT()}who_am_i`
+
+export const SEARCH_CHEMICAL = (chemical, page=1) => `${API_ROOT()}search_chemical?chemical=${chemical}&page=${page}`;

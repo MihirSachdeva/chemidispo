@@ -44,9 +44,17 @@ export default function ChemicalDisposalModal(props) {
       </AppBar>
 
       <div className="msds-container">
-        <Typography variant="h5">Chemical 1</Typography>
-        <Typography variant="body1">with</Typography>
-        <Typography variant="h5">Chemical 2</Typography>
+        <Typography variant="h5">BARIUM OXIDE</Typography>
+        <Typography variant="body1">CAS Number: 1304-28-5</Typography>
+        <Typography variant="body1">Bases, Strong</Typography>
+
+        <br />
+        <Typography variant="body1"><i>and</i></Typography>
+        <br />
+
+        <Typography variant="h5">ALUMINUM BROMIDE</Typography>
+        <Typography variant="body1">CAS Number: 7727-15-3</Typography>
+        <Typography variant="body1">Acids, Strong Non-oxidizing</Typography>
 
         <br />
         <Divider />
@@ -74,6 +82,10 @@ export default function ChemicalDisposalModal(props) {
 
         <Typography variant="h5">Intense or explosive reaction</Typography>
         <Typography variant="h6">Reaction may be particularly intense, violent, or explosive</Typography>
+        <br />
+
+        <Typography variant="h5">Toxic</Typography>
+        <Typography variant="h6">Reaction products may be toxic</Typography>
         <br />
 
         <Divider />

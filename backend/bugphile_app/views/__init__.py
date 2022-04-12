@@ -19,3 +19,4 @@ from .category import CategoryViewSet
 from .chemical import ChemicalViewSet
 from .handling import HandlingViewSet
 from .compatibility import CompatibilityViewSet
+from .search_chemical import SearchChemicalView
