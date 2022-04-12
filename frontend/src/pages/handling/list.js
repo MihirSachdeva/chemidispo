@@ -21,7 +21,10 @@ const ChemicalList = (props) => {
           <>
             <ListItem disablePadding onClick={showModal} key={chemical}>
               <ListItemButton>
-                <ListItemText primary={`Chemical ${chemical}`} />
+                <ListItemText
+                  primary={chemical.name}
+                  secondary={`CAS Number: ${chemical.cas_number}`}
+                />
               </ListItemButton>
             </ListItem>
 

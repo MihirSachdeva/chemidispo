@@ -27,4 +27,5 @@ urlpatterns += [
     path(r'users_stats', UserStatsView.as_view()),
     path(r'who_am_i', WhoAmIView.as_view()),
     path(r'project_issues_list', ProjectIssuesView.as_view()),
+    path(r'search_chemical', SearchChemicalView.as_view()),
 ]

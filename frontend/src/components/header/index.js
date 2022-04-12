@@ -15,7 +15,7 @@ const Header = () => {
       >
         <Toolbar>
           <Typography variant="h6" noWrap>
-            ChemDispo
+            ChadLabs
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>

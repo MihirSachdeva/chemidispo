@@ -10,8 +10,17 @@ import ChemicalHandlingModal from "./modal";
 import "./styles.css";
 import emptyListIllustration from "../../assets/img/empty.svg";
 
-const chemicals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-// const chemicals = [];
+const chemicals = [
+  {name: "BARIUM PERCHLORATE", cas_number: "10294-39-0"},
+  {name: "TITANIUM TETRACHLORIDE", cas_number: "7550-45-0"},
+  {name: "FERRIC CHLORIDE", cas_number: "7705-08-0"},
+  {name: "FLUOROBORIC ACID", cas_number: "16872-11-0"},
+  {name: "GALLIUM TRICHLORIDE", cas_number: "13450-90-3"},
+  {name: "HYDROGEN CHLORIDE", cas_number: "7647-01-0"},
+  {name: "PHOSPHORUS PENTACHLORIDE", cas_number: "10026-13-8"},
+  {name: "SULFUR DIOXIDE", cas_number: "7446-09-5"},
+  {name: "SULFUROUS ACID", cas_number: "7782-99-2"},
+];
 
 const Handling = (props) => {
   const [modal, setModal] = useState(false);
