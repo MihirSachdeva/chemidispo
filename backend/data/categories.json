@@ -1,0 +1,166 @@
+[
+  {
+    "name": "Acids, Mineral, Non-oxidizing",
+    "code": "1"
+  },
+  {
+    "name": "Acids, Mineral, Oxidizing ",
+    "code": "2"
+  },
+  {
+    "name": "Acids, Organic",
+    "code": "3"
+  },
+  {
+    "name": "Alcohols and Glycols",
+    "code": "4"
+  },
+  {
+    "name": "Aldehydes",
+    "code": "5"
+  },
+  {
+    "name": "Amides",
+    "code": "6"
+  },
+  {
+    "name": "Amines, Aliphatic and Aromatic ",
+    "code": "7"
+  },
+  {
+    "name": "Azo Compounds, Diazo Compounds and Hydrazines",
+    "code": "8"
+  },
+  {
+    "name": "Carbamates",
+    "code": "9"
+  },
+  {
+    "name": "Caustics",
+    "code": "10"
+  },
+  {
+    "name": "Cyanides",
+    "code": "11"
+  },
+  {
+    "name": "Dithiocarbamates",
+    "code": "12"
+  },
+  {
+    "name": "Esters",
+    "code": "13"
+  },
+  {
+    "name": "Ethers",
+    "code": "14"
+  },
+  {
+    "name": "Fluorides, Inorganic ",
+    "code": "15"
+  },
+  {
+    "name": "Hydrocarbons, Aromatic",
+    "code": "16"
+  },
+  {
+    "name": "Halogenated Organics",
+    "code": "17"
+  },
+  {
+    "name": "Isocyanates",
+    "code": "18"
+  },
+  {
+    "name": "Ketones",
+    "code": "19"
+  },
+  {
+    "name": "Mercaptans and Other Organic Sulfides",
+    "code": "20"
+  },
+  {
+    "name": "Metals, Alkali and Alkaline Earth, Elemental",
+    "code": "21"
+  },
+  {
+    "name": "Metals, Other Elemental & Alloys as Powders, Vapors, or Sponges",
+    "code": "22"
+  },
+  {
+    "name": "Metals, Other Elemental & Alloys as Sheets, Rods, Drops, etc.",
+    "code": "23"
+  },
+  {
+    "name": "Metals and Metal Compounds, Toxic ",
+    "code": "24"
+  },
+  {
+    "name": "Nitrides",
+    "code": "25"
+  },
+  {
+    "name": "Nitriles",
+    "code": "26"
+  },
+  {
+    "name": "Nitro Compounds, Organic",
+    "code": "27"
+  },
+  {
+    "name": "Hydrocarbons, Aliphatic, Unsaturated",
+    "code": "28"
+  },
+  {
+    "name": "Hydrocarbons, Aliphatic, Saturated",
+    "code": "29"
+  },
+  {
+    "name": "Peroxides and Hydroperoxides, Organic",
+    "code": "30"
+  },
+  {
+    "name": "Phenols and Cresols",
+    "code": "31"
+  },
+  {
+    "name": "Organophosphates, Phosphothioates, Phosphodithioates",
+    "code": "32"
+  },
+  {
+    "name": "Sulfides, Inorganic",
+    "code": "33"
+  },
+  {
+    "name": "Epoxides",
+    "code": "34"
+  },
+  {
+    "name": "Combustible and Flammable Materials, Miscellaneous",
+    "code": "101"
+  },
+  {
+    "name": "Explosives",
+    "code": "102"
+  },
+  {
+    "name": "Polymerizable Compounds",
+    "code": "103"
+  },
+  {
+    "name": "Oxidizing Agents, Strong",
+    "code": "104"
+  },
+  {
+    "name": "Reducing Agents, Strong",
+    "code": "105"
+  },
+  {
+    "name": "Water and Mixtures Containing Water",
+    "code": "106"
+  },
+  {
+    "name": "Water Reactive Substances ",
+    "code": "107"
+  }
+]

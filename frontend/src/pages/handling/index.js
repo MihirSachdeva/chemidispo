@@ -1,68 +1,135 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { TextField, Button, Typography, Divider } from '@mui/material';
+import {
+  TextField,
+  Button,
+  Typography,
+  Divider,
+  Box,
+  CircularProgress,
+  Alert,
+  Pagination,
+} from "@mui/material";
 
 import { page_names } from "../../constants/frontend-urls";
 import { setPage } from "../../store/actions/page";
-
+import { fetchChemicalsSearch } from "../../store/actions/chemicals-search";
 import List from "./list";
 import ChemicalHandlingModal from "./modal";
+
 import "./styles.css";
 import emptyListIllustration from "../../assets/img/empty.svg";
-
-const chemicals = [
-  {name: "BARIUM PERCHLORATE", cas_number: "10294-39-0"},
-  {name: "TITANIUM TETRACHLORIDE", cas_number: "7550-45-0"},
-  {name: "FERRIC CHLORIDE", cas_number: "7705-08-0"},
-  {name: "FLUOROBORIC ACID", cas_number: "16872-11-0"},
-  {name: "GALLIUM TRICHLORIDE", cas_number: "13450-90-3"},
-  {name: "HYDROGEN CHLORIDE", cas_number: "7647-01-0"},
-  {name: "PHOSPHORUS PENTACHLORIDE", cas_number: "10026-13-8"},
-  {name: "SULFUR DIOXIDE", cas_number: "7446-09-5"},
-  {name: "SULFUROUS ACID", cas_number: "7782-99-2"},
-];
+import { fetchChemicalHandling } from "../../store/actions/chemical-handling";
 
 const Handling = (props) => {
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
   const [modal, setModal] = useState(false);
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setSearch(value);
+  };
+
+  const handlePageChange = (event, value) => {
+    setPage(value);
+    searchChemicals(value);
+  };
+
+  const handleShowHandling = (chemical) => {
+    props.fetchChemicalHandling(chemical);
+    setModal(true);
+  };
+
+  const searchChemicals = (pageNumber = page) => {
+    props.fetchChemicalsSearch(search, pageNumber);
+  };
 
   useEffect(() => {
     props.setPage(page_names.HANDLING);
   }, []);
+
+  console.log(
+    props.chemicalsSearch,
+    props.chemicalsSearchIsLoading,
+    props.chemicalsSearchError
+  );
 
   return (
     <>
       <div className="handling-page">
         <Typography variant="h5">Chemical Handling</Typography>
 
-        <Divider variant="middle" style={{ margin: '0.5rem 0' }} />
+        <Divider variant="middle" style={{ margin: "0.5rem 0" }} />
 
         <div className="search-container">
-          <TextField id="" label="Search chemical" variant="outlined" />
-          <Button>Search</Button>
+          <TextField
+            value={search}
+            label="Search chemical"
+            variant="outlined"
+            onChange={handleChange}
+          />
+          <Button
+            onClick={() => {
+              searchChemicals();
+            }}
+          >
+            Search
+          </Button>
         </div>
 
-        <Divider variant="middle" style={{ margin: '0.5rem 0' }} />
+        <Divider variant="middle" style={{ margin: "0.5rem 0" }} />
 
-        {chemicals.length ? (
+        {props.chemicalsSearchIsLoading ? (
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <CircularProgress />
+          </Box>
+        ) : props.chemicalsSearchError ? (
+          <div>
+            <Alert severity="error">
+              Could not fetch chemicals. Please try again later.
+            </Alert>
+          </div>
+        ) : props.chemicalsSearch.results.length ? (
           <List
-            chemicals={chemicals}
-            showModal={() => {
-              setModal(true)
+            chemicals={props.chemicalsSearch.results}
+            showModal={(chemical) => {
+              handleShowHandling(chemical);
             }}
           />
         ) : (
           <div className="empty-list-illustration-container">
-            <img src={emptyListIllustration} className="empty-list-illustration" />
+            <img
+              src={emptyListIllustration}
+              className="empty-list-illustration"
+            />
             <br />
-            <Typography variant="caption">Search for a chemical to get started!</Typography>
+            <Typography variant="caption">
+              Search for a chemical to get started!
+            </Typography>
           </div>
         )}
 
+        <div>
+          <Pagination
+            count={props.chemicalsSearch.totalPages}
+            page={page}
+            onChange={handlePageChange}
+            variant="outlined"
+            color="primary"
+          />
+        </div>
       </div>
       <ChemicalHandlingModal
         open={modal}
         onClose={() => {
-          setModal(false)
+          setModal(false);
         }}
       />
     </>
@@ -72,12 +139,26 @@ const Handling = (props) => {
 const mapStateToProps = (state) => {
   return {
     page: state.page.page,
+
+    chemicalsSearch: state.chemicalsSearch.chemicals,
+    chemicalsSearchError: state.chemicalsSearch.error,
+    chemicalsSearchIsLoading: state.chemicalsSearch.isLoading,
+
+    chemicalHandling: state.chemicalHandling.chemical,
+    chemicalHandlingError: state.chemicalHandling.error,
+    chemicalHandlingIsLoading: state.chemicalHandling.isLoading,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     setPage: (page) => dispatch(setPage(page)),
+    fetchChemicalsSearch: (chemical, page) => {
+      return dispatch(fetchChemicalsSearch(chemical, page));
+    },
+    fetchChemicalHandling: (chemical) => {
+      return dispatch(fetchChemicalHandling(chemical));
+    },
   };
 };
 

@@ -17,7 +17,6 @@ router.register(r'user_issues_reported', UserIssuesReportedViewSet, basename='us
 router.register(r'category', CategoryViewSet, basename='category')
 router.register(r'chemical', ChemicalViewSet, basename='chemical')
 router.register(r'handling', HandlingViewSet, basename='handling')
-router.register(r'compatibility', CompatibilityViewSet, basename='compatibility')
 urlpatterns = router.urls
 
 urlpatterns += [
@@ -28,4 +27,6 @@ urlpatterns += [
     path(r'who_am_i', WhoAmIView.as_view()),
     path(r'project_issues_list', ProjectIssuesView.as_view()),
     path(r'search_chemical', SearchChemicalView.as_view()),
+    path(r'search_chemical_with_category', SearchChemicalWithCategoryView.as_view()),
+    path(r'compatibility', CompatibilityView.as_view()),    
 ]

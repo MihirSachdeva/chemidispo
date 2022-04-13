@@ -18,5 +18,6 @@ from .project_issues import ProjectIssuesView
 from .category import CategoryViewSet
 from .chemical import ChemicalViewSet
 from .handling import HandlingViewSet
-from .compatibility import CompatibilityViewSet
+from .compatibility import CompatibilityView
 from .search_chemical import SearchChemicalView
+from .search_chemical_with_category import SearchChemicalWithCategoryView

@@ -10,6 +10,7 @@ from .user_things.user_projects import UserProjectsSerializer
 from .user_things.user_issues_reported import UserIssuesReportedSerializer
 from .user_things.user_issues_assigned import UserIssuesAssignedSerializer
 from .category import CategorySerializer
-from .chemical import ChemicalSerializer
+from .placard import PlacardSerializer
 from .handling import HandlingSerializer
+from .chemical import ChemicalSerializer, ChemicalDetailSerializer
 from .compatibility import CompatibilitySerializer
