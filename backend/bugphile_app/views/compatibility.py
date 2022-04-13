@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from bugphile_app.models import Chemical, Compatibility
-from bugphile_app.api.serializers import CompatibilitySerializer
+from bugphile_app.api.serializers import CompatibilitySerializer, ChemicalSerializer
 from bugphile_app.constants.compatibilities import compatibility_map
 
 
@@ -16,6 +16,9 @@ class CompatibilityView(APIView):
         try:
             chemical_1 = Chemical.objects.get(id=chemical_1_id)
             chemical_2 = Chemical.objects.get(id=chemical_2_id)
+
+            chemical_1_data = ChemicalSerializer(chemical_1).data
+            chemical_2_data = ChemicalSerializer(chemical_2).data
         except:
             return Response(
                 {'message': 'Could not find the chemicals you searched for.'},
@@ -55,7 +58,13 @@ class CompatibilityView(APIView):
                 "description": compatibility_data["description"],
             })
 
+        response = {
+            'report': final_compatibility_report,
+            'chemical_1': chemical_1_data,
+            'chemical_2': chemical_2_data,
+        }
+
         return Response(
-            final_compatibility_report,
+            response,
             status=status.HTTP_200_OK
         )
