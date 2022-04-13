@@ -9,5 +9,6 @@ from .issue_event import IssueEvent
 from .comment import Comment
 from .category import Category
 from .compatibility import Compatibility
+from .placard import Placard
 from .chemical import Chemical
 from .handling import Handling

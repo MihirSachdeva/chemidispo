@@ -1,7 +1,5 @@
 from django.db.models import Q
-from rest_framework import status
 from rest_framework.views import APIView
-from rest_framework.response import Response
 from bugphile_app.models import Chemical
 from bugphile_app.api.serializers import ChemicalSerializer
 from bugphile_app.pagination import CustomPagination
@@ -9,7 +7,7 @@ from bugphile_app.pagination import CustomPagination
 
 class SearchChemicalView(APIView, CustomPagination):
 
-    page_size = 3
+    page_size = 10
 
     def get(self, request):
         chemical = self.request.GET.get('chemical', None)
