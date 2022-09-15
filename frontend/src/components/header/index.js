@@ -10,7 +10,7 @@ const Header = () => {
       >
         <Toolbar>
           <Typography variant="h6" noWrap>
-            ChadLabs
+            ChadLabs by IIT Roorkee
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
