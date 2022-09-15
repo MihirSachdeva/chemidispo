@@ -49,11 +49,6 @@ const Handling = (props) => {
     props.setPage(page_names.HANDLING);
   }, []);
 
-  console.log(
-    props.chemicalsSearch,
-    props.chemicalsSearchIsLoading,
-    props.chemicalsSearchError
-  );
 
   return (
     <>
