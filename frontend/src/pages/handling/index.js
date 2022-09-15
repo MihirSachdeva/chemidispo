@@ -49,15 +49,11 @@ const Handling = (props) => {
     props.setPage(page_names.HANDLING);
   }, []);
 
-  console.log(
-    props.chemicalsSearch,
-    props.chemicalsSearchIsLoading,
-    props.chemicalsSearchError
-  );
 
   return (
     <>
       <div className="handling-page">
+        <Typography variant="h6">Made with ❤️ by IIT Roorkee</Typography>
         <Typography variant="h5">Chemical Handling</Typography>
 
         <Divider variant="middle" style={{ margin: "0.5rem 0" }} />
